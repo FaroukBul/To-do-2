@@ -1,9 +1,60 @@
 body {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+h1 {
+    text-align: center;
+}
 .to-do-app{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 70%;
+}
+
+.add-fields #add-text{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: center;
+}
+#add-text {
+    display: flex;
+    align-items: center;
+}
+#text{
+    border-radius: 5px;
+    border: 1px solid rgb(84, 190, 155);
+    width: 25em;
+    height: 2em;
+    padding: 0.5em;
+}
+#text:focus{
+    border: none;
+    background-color: rgba(84, 190, 155, 0.472);
+    border-radius: 5px;
+}
+.add-btn-container{
+    display: flex;
+    margin-top: 0.7em;
+    width: auto;
+    justify-content: center;
+}
+#add-btn {
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(109, 231, 98, 0.794);
+    width: 25em;
+    height: 2em;
+}
+
+.cards-container {
+    margin-top: 5em;
     display: grid;
     justify-content: center;
+    row-gap: 1em;
 }
