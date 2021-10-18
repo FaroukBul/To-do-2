@@ -12,6 +12,7 @@ class Todo {
 
     constructor(){
         this.ids = ids
+        this.id = null
         this.container = document.getElementsByClassName("cards-container")[0]
         this.newCard = null
         this.textContainer = null
@@ -21,12 +22,23 @@ class Todo {
 
     createCard(){
         this.newCard = this.createDiv()
+        this.newCard.setAttribute("id", this.generateId())
+        this.newCard.classList.add("card")
+        this.getText()
+        this.btns()
+        this.container.appendChild(this.newCard)
+    }
+
+    getText(){
         this.textContainer = this.createDiv()
         this.textContainer.innerHTML = this.text
-        this.newCard.classList.add("card")
-        this.newCard.setAttribute("id", this.generateId())
         this.newCard.appendChild(this.textContainer)
-        this.container.appendChild(this.newCard)
+    }
+
+    btns(){
+        this.btnContainer = this.createDiv()
+        this.btnContainer.appendChild(this.deleteBtn())
+        this.newCard.appendChild(this.btnContainer)
     }
 
     createDiv(){
@@ -39,6 +51,19 @@ class Todo {
             id = this.ids[this.ids.length - 1] + 1
         }
         this.ids.push(id)
+        this.id = id
         return id
     }
+
+    deleteBtn(){
+        let btn = document.createElement("button")
+        btn.addEventListener("click", ()=>{this.eraseToDo(this.newCard)})
+        return btn
+    }
+
+    eraseToDo(todoCard){
+        todoCard.remove()
+    }
+
+
 }
