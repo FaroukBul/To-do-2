@@ -58,3 +58,47 @@ h1 {
     justify-content: center;
     row-gap: 1em;
 }
+
+.card{
+    display: flex;
+    width: 35em;
+    border: 4px solid rgba(202, 177, 32, 0.671);
+    border-radius: 10px;
+}
+.text-container {
+    display: flex;
+    width: 90%;
+    height: 3em;
+    text-align: left;
+    line-height: 3em;
+    justify-content: center;
+    overflow: hidden;
+    padding: 0.3em;
+}
+.text-container:hover {
+    overflow: visible;
+    line-height: 1.3em;
+    padding-top:1.15em;
+    width: fit-content;
+    height: auto;
+}
+
+.done {
+    background-color: rgba(84, 190, 155, 0.589);
+    border: 4px solid transparent;
+}
+
+.btn-container{
+    display: flex;
+    justify-content: center;
+}
+
+.delete-btn{
+    border: none;
+    border-radius: 5px;
+    background-color: rgba(216, 44, 44, 0.877);
+    width: 5em;
+    height: 4.5em;
+
+}
+
