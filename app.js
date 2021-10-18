@@ -32,12 +32,15 @@ class Todo {
     getText(){
         this.textContainer = this.createDiv()
         this.textContainer.innerHTML = this.text
+        this.textContainer.classList.add("text-container")
+        this.done()
         this.newCard.appendChild(this.textContainer)
     }
 
     btns(){
         this.btnContainer = this.createDiv()
         this.btnContainer.appendChild(this.deleteBtn())
+        this.btnContainer.classList.add("btn-container")
         this.newCard.appendChild(this.btnContainer)
     }
 
@@ -55,10 +58,26 @@ class Todo {
         return id
     }
 
+    done(){
+        this.textContainer.addEventListener("click", ()=>{
+            this.changeColors(this.newCard)
+        })
+    }
+
     deleteBtn(){
         let btn = document.createElement("button")
+        btn.innerHTML = "done"
         btn.addEventListener("click", ()=>{this.eraseToDo(this.newCard)})
+        btn.classList.add("delete-btn")
         return btn
+    }
+
+    changeColors(toDo){
+        if(toDo.classList.contains("done")){
+            toDo.classList.remove("done")
+        } else {
+            toDo.classList.add("done")
+        }
     }
 
     eraseToDo(todoCard){
